@@ -1,4 +1,4 @@
-package edu.br.infnet.petfriends;
+package edu.br.infnet.petfriends_pedido;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
