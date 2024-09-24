@@ -7,6 +7,6 @@ public enum PedidoStatus {
     EM_PREPARACAO,
     EM_TRANSITO,
     ENTREGUE,
-    ESTRAVIADO,
+    EXTRAVIADO,
     DEVOLVIDO
 }

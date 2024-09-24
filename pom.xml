@@ -103,6 +103,12 @@
             <version>4.10.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+
         <!-- RabbitMQ Test para testes de integração -->
         <dependency>
             <groupId>org.springframework.amqp</groupId>
@@ -121,7 +127,7 @@
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-api</artifactId>
-            <version>1.65.1</version> <!-- Certifique-se de que esta versão é necessária -->
+            <version>1.65.1</version>
         </dependency>
     </dependencies>
 
