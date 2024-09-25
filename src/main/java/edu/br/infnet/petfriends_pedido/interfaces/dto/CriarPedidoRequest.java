@@ -1,8 +1,10 @@
-package edu.br.infnet.petfriends_pedido.domain.model;
+package edu.br.infnet.petfriends_pedido.interfaces.dto;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class CriarPedidoRequest {
 
     private Long id;
@@ -11,7 +13,8 @@ public class CriarPedidoRequest {
     private int quantidade;
     private Long produtoId;
 
-    public CriarPedidoRequest() {}
+    public CriarPedidoRequest() {
+    }
 
     public CriarPedidoRequest(Long id, String descricao, double valor, int quantidade, Long produtoId) {
         this.id = id;
@@ -24,9 +27,11 @@ public class CriarPedidoRequest {
     @Override
     public String toString() {
         return "CriarPedidoRequest{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", descricao='" + descricao + '\'' +
                 ", valor=" + valor +
+                ", quantidade=" + quantidade +
+                ", produtoId=" + produtoId +
                 '}';
     }
 }

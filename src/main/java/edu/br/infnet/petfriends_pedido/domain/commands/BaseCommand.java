@@ -1,13 +1,15 @@
 package edu.br.infnet.petfriends_pedido.domain.commands;
 
-
 import lombok.Getter;
+import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @Getter
-public abstract class BaseCommand<T> {
-    private final T id;
+public class BaseCommand {
 
-    protected BaseCommand(T id) {
+    @TargetAggregateIdentifier
+    private final Long id;
+
+    public BaseCommand(Long id) {
         this.id = id;
     }
 

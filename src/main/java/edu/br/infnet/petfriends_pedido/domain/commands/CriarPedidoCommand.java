@@ -1,17 +1,13 @@
 package edu.br.infnet.petfriends_pedido.domain.commands;
 
+import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+public class CriarPedidoCommand extends BaseCommand {
 
-@Getter
-@Setter
-public class CriarPedidoCommand extends BaseCommand<Long> {
-    private final String descricao;
-    private final double valor;
-    private final int quantidade;
-    private final Long produtoId;
+    private String descricao;
+    private double valor;
+    private int quantidade;
+    private Long produtoId;
 
     public CriarPedidoCommand(Long id, String descricao, double valor, int quantidade, Long produtoId) {
         super(id);
@@ -19,5 +15,21 @@ public class CriarPedidoCommand extends BaseCommand<Long> {
         this.valor = valor;
         this.quantidade = quantidade;
         this.produtoId = produtoId;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public Long getProdutoId() {
+        return produtoId;
     }
 }

@@ -1,4 +1,4 @@
-package edu.br.infnet.petfriends_pedido.domain.dto;
+package edu.br.infnet.petfriends_pedido.interfaces.dto;
 
 
 import lombok.Data;

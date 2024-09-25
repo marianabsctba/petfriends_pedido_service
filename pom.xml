@@ -103,11 +103,11 @@
             <version>4.10.0</version>
         </dependency>
 
+        <!-- Feign Client para comunicação com outros microsserviços -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
-
 
         <!-- RabbitMQ Test para testes de integração -->
         <dependency>

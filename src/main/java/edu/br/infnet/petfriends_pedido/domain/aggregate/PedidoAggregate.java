@@ -1,13 +1,12 @@
 package edu.br.infnet.petfriends_pedido.domain.aggregate;
 
-
 import edu.br.infnet.petfriends_pedido.domain.commands.CriarPedidoCommand;
 import edu.br.infnet.petfriends_pedido.domain.events.PedidoCriadoEvent;
+import edu.br.infnet.petfriends_pedido.domain.events.PedidoPreparadoParaEnvioEvent;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.spring.stereotype.Aggregate;
-
 
 import static org.axonframework.modelling.command.AggregateLifecycle.apply;
 
@@ -18,7 +17,7 @@ public class PedidoAggregate {
     private Long id;
     private String descricao;
     private double valor;
-    private int quntidade;
+    private int quantidade;
     private Long produtoId;
 
     public PedidoAggregate() { }
@@ -33,7 +32,9 @@ public class PedidoAggregate {
         this.id = event.getId();
         this.descricao = event.getDescricao();
         this.valor = event.getValor();
-        this.quntidade = event.getQuantidade();
+        this.quantidade = event.getQuantidade();
         this.produtoId = event.getProdutoId();
+
+        apply(new PedidoPreparadoParaEnvioEvent(this.id, "Rua Exemplo, 123", "Cliente Exemplo"));
     }
 }
