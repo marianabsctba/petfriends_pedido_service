@@ -1,19 +1,22 @@
 package edu.br.infnet.petfriends_pedido.domain.events;
 
-import edu.br.infnet.petfriends_pedido.domain.enums.PedidoStatus;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class PedidoCriadoEvent {
-    private Long pedidoId;
-    private Long clienteId;
-    private String clienteNome;
-    private String clienteTelefone;
-    private PedidoStatus status;
-    private String enderecoEntrega;
-    private Long produtoId;
+@Getter
+@Setter
+public class PedidoCriadoEvent extends BaseEvent<Long> {
+    private final String descricao;
+    private final double valor;
+    private final int quantidade;
+    private final Long produtoId;
+
+    public PedidoCriadoEvent(Long id, String descricao, double valor, int quantidade, Long produtoId) {
+        super(id);
+        this.descricao = descricao;
+        this.valor = valor;
+        this.quantidade = quantidade;
+        this.produtoId = produtoId;
+    }
+
 }

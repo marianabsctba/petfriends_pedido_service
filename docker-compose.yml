@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  # Serviço RabbitMQ para o Pedido
+  rabbitmq_almoxarifado:
+    image: rabbitmq:management
+    container_name: rabbitmq_pedido
+    restart: always
+    ports:
+      - "5673:5672"      # Porta do RabbitMQ (5672) mapeada para 5673 no host
+      - "15673:15672"    # Porta do painel de gerenciamento (15672) mapeada para 15673 no host
+    environment:
+      RABBITMQ_DEFAULT_USER: admin  # Usuário padrão do RabbitMQ
+      RABBITMQ_DEFAULT_PASS: admin  # Senha padrão do RabbitMQ
+    networks:
+      - petfriends-network  # Definindo uma rede para comunicação com outros serviços
+
+networks:
+  petfriends-network:
+    driver: bridge
